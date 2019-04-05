@@ -1,0 +1,18 @@
+<!--   0.1  Add Angular's *ngIf directive as a wrapping <div> and set it to 'selectedHero'    <div *ngIf="selectedHero">
+            When selectedHero is undefined, the ngIf removes the hero detail from the DOM.
+            When the user picks a hero, selectedHero has a value and ngIf puts the hero detail into the DOM.
+       1.0  Moved the template from 'heroes.component.html'
+       2.0  Replace "selectedHero" with "hero" everywhere in the template.
+            The new HeroDetailComponent can present any hero, not just a selected hero
+-->
+<div *ngIf="hero">
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
